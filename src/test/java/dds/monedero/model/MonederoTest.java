@@ -7,10 +7,11 @@ import dds.monedero.exceptions.SaldoMenorException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MonederoTest {
-  private Cuenta cuenta;
+  private Cuenta cuenta;               // NO LLEGUÉ A AGREGAR MÁS TESTS, SOLO LOS CORREGI Y LES CAMBIÉ EL NOMBRE PARA QUE SEAN MÁS EXPRESIVOS
 
   @BeforeEach
   void init() {
@@ -32,6 +33,7 @@ public class MonederoTest {
     cuenta.poner(1500);
     cuenta.poner(456);
     cuenta.poner(1900);
+    assertEquals(cuenta.getMovimientos().stream().mapToDouble(movimiento -> movimiento.getMonto()).sum(), 1500+456+1900);
   }
 
   @Test
