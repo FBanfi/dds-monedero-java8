@@ -26,13 +26,13 @@ public class Cuenta {
   public void poner(double cuanto) {
 
     validadorPoner.validar(cuanto, this);
-    new Movimiento(LocalDate.now(), cuanto, true).agregateA(this);
+    movimientos.add(new Movimiento(LocalDate.now(), cuanto, true));
   }
 
   public void sacar(double cuanto) {
 
     validadorSacar.validar(cuanto, this);
-    new Movimiento(LocalDate.now(), cuanto, false).agregateA(this);
+    movimientos.add(new Movimiento(LocalDate.now(), cuanto, false));
   }
 
   public void agregarMovimiento(Movimiento movimiento) {
