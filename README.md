@@ -18,6 +18,16 @@ Tenés seis tareas:
  4. :rescue_worker_helmet: Corregí smells, de a un commit por vez. 
  5. :arrow_up: Subí todos los cambios a tu _fork_
 
+### Code Smells Encontrados:
+En Cuenta:
+ - Clase: Large Class -> Es una clase muy larga
+ - Método "Sacar" y "Poner": Long Method, Type Test, Duplicated Code -> en ambas creo que se evidencian estos code smells, está todo en un solo método, no aprovecha el polimorfismo y se repiten partes del código
+ - Método "agregarMovimiento": Feature Envy -> conoce informacion de otro objeto que no necesita
+
+En Movimientos:
+ - Clase: Data Class -> presenta mayormente metodos que son getters y setters
+ - Método "AgregateA": Duplicated Method, Feature Envy -> No es necesario que exista porque en cuenta ya existe el método agregar movimiento, conociendo a la cuenta cuando enrealidad no lo necesita.
+
 ### Tecnologías usadas
 
 * Java 8.
